@@ -13,9 +13,9 @@ import locale
 arabic_to_english = {'١': '1', '٢': '2', '٣': '3', '٤': '4', '٥': '5', '٦': '6', '٧': '7', '٨': '8', '٩': '9', '٠': '0'}
 english_to_arabic = {'1': '١', '2': '٢', '3': '٣', '4': '٤', '5': '٥', '6': '٦', '7': '٧', '8': '٨', '9': '٩', '0': '٠'}
 
-def InvoiceToJSON(lines):
+def InvoiceToJSON(data):
     to_json = {"invoice_number": data[6],
-                "date": data[9]}
+                "date": data[9][:2]+'/'+data[9][3:5]+'/'+data[9][6:]}
     return to_json
 
 def ocr(image_url):
